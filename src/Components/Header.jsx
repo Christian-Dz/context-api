@@ -2,7 +2,7 @@
 
 
 
-export function Header({theme, handleTheme, texts, handleLanguage}) {
+export function Header({theme, handleTheme, texts, handleLanguage, auth, handleAuth}) {
   return (
     <header className={theme}>
       <h2>{texts.headerTitle}</h2>
@@ -17,7 +17,9 @@ export function Header({theme, handleTheme, texts, handleLanguage}) {
         <input type="radio" name="theme" id="dark" onClick={handleTheme} value={"dark"}/>
         <label htmlFor="dark">{texts.headerDark}</label>
 
-        <button>{texts.buttonLogin}{texts.buttonLogout}</button> 
+        <button onClick={handleAuth}>
+            {auth ? texts.buttonLogout : texts.buttonLogin}
+        </button> 
     </header>
   );
 }

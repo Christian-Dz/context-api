@@ -60,10 +60,26 @@ export function MyPage () {
         }
     }
 
+
+    const handleAuth = (e) => {
+        if (auth){
+            setAuth(null)
+        } else{
+            setAuth(true)
+        }
+    }
+
     return (
         <div className="my-page">
-            <Header theme={theme} handleTheme={handleTheme} texts={texts} handleLanguage={handleLanguage}/>
-            <Main theme={theme} texts={texts}/>
+            <Header 
+            theme={theme} 
+            handleTheme={handleTheme} 
+            texts={texts} 
+            handleLanguage={handleLanguage}
+            auth={auth}
+            handleAuth={handleAuth}
+            />
+            <Main theme={theme} texts={texts} auth={auth}/>
             <Footer theme={theme} texts={texts}/>
         </div>
     )

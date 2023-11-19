@@ -2,11 +2,10 @@
 
 
 
-export function Main ({theme, texts}){
+export function Main ({theme, texts, auth}){
     return (
-        <main className={theme}> 
-            <p>{texts.mainWelcom}</p>  
-            <p>{texts.mainHello}</p>  
+        <main className={theme}>
+            {auth ? <p>{texts.mainHello}</p> : <p>{texts.mainWelcom}</p>} 
             <p>{texts.mainContent}</p>
         </main>
     )
