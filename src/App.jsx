@@ -1,17 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import { MyPage } from './Components/MyPage'
 import { MyPageContext } from './Components/MyPageContext'
+import { CrudApi } from "./Components/CrudApi"
+import { CrudProvider } from './Components/CrudContext'
+
 
 function App() {
   
   return (
     <>
-      <MyPage/>
+      <CrudProvider>
+      <CrudApi/>
+      </CrudProvider>
       <hr/>
       <MyPageContext/>
+      <hr/>
+      <MyPage/>
     </>
   )
 }
